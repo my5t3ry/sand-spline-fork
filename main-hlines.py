@@ -10,12 +10,11 @@ from numpy import zeros
 from numpy import column_stack
 
 
-BG = [0,0,0,1]
-FRONT = [1,1,1,0.01]
-GAMMA = 1.5
+BG = [0, 0, 0, 1]
+FRONT = [1, 1, 1, 0.01]
+GAMMA = 2.5
 
 TWOPI = 2.0*pi
-
 FRONT = [1,1,1,1]
 BACK = [0,1,1,0.001]
 
@@ -63,10 +62,10 @@ def spline_iterator():
 
   itt = 0
   while True:
-    for s in splines:
+    for w, s in enumerate(splines):
       xy = next(s)
       itt += 1
-      yield itt, xy
+      yield itt,w, xy
 
 
 def main():
@@ -80,11 +79,16 @@ def main():
 
   fn = Fn(prefix='./res/', postfix='.png')
   si = spline_iterator()
+  from modules.helpers import get_colors
+  colors = get_colors('colors/dark_cyan_white_black2.gif')
+  nc = len(colors)
 
   while True:
     try:
-      itt, xy = next(si)
+      itt,w, xy = next(si)
       sand.paint_dots(xy)
+      rgba = colors[w%nc] + [0.005]
+      sand.set_rgba(rgba)
       if not itt%(500*GRID_Y):
         print(itt)
         sand.write_to_png("./res/currenrt.png", GAMMA)

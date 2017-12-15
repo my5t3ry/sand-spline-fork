@@ -9,14 +9,13 @@ from numpy import column_stack
 from numpy import pi
 from numpy import array
 
-BG = [1,1,1,1]
-FRONT = [0,0,0,0.05]
+BG = [0, 0, 0, 1]
+FRONT = [1, 1, 1, 0.01]
 
 
 TWOPI = 2.0*pi
-
-BACK = [1,1,1,1]
-FRONT = [0,0,0,0.05]
+FRONT = [1,1,1,1]
+BACK = [0,1,1,0.001]
 
 SIZE = 1000
 PIX = 1.0/SIZE
@@ -81,7 +80,7 @@ def main():
   sand.set_bg(BG)
   sand.set_rgba(FRONT)
 
-  colors = get_colors('../colors/shimmering.gif')
+  colors = get_colors('colors/dark_cyan_white_black.gif')
   nc = len(colors)
 
   fn = Fn(prefix='./res/', postfix='.png')
@@ -95,7 +94,7 @@ def main():
       sand.paint_dots(xy)
       if not itt%(10*GRID_X*GRID_Y):
         print(itt)
-        sand.write_to_png(fn.name())
+        sand.write_to_png("./res/current.png")
     except Exception as e:
       print(e)
       sand.write_to_png(fn.name())
