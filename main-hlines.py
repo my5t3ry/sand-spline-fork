@@ -9,14 +9,15 @@ from numpy import arange
 from numpy import zeros
 from numpy import column_stack
 
-BG = [1,1,1,1]
 
+BG = [0,0,0,1]
+FRONT = [1,1,1,0.01]
 GAMMA = 1.5
 
 TWOPI = 2.0*pi
 
-BACK = [1,1,1,1]
-FRONT = [0,1,1,0.001]
+FRONT = [1,1,1,1]
+BACK = [0,1,1,0.001]
 
 SIZE = 5000
 PIX = 1.0/SIZE
@@ -86,7 +87,7 @@ def main():
       sand.paint_dots(xy)
       if not itt%(500*GRID_Y):
         print(itt)
-        sand.write_to_png(fn.name(), GAMMA)
+        sand.write_to_png("./res/currenrt.png", GAMMA)
     except Exception as e:
       print(e)
       sand.write_to_png(fn.name(), GAMMA)

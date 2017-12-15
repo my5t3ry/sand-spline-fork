@@ -13,7 +13,7 @@ from numpy import cos
 from numpy import sin
 
 BG = [0,0,0,1]
-FRONT = [0,0,0,0.01]
+FRONT = [1,1,1,0.01]
 
 TWOPI = 2.0*pi
 
@@ -95,10 +95,10 @@ def main():
       sand.paint_dots(xy)
       if not itt%(700*GRID_Y*GRID_X):
         print(itt)
-        sand.write_to_png(fn.name(), GAMMA)
+        sand.write_to_png("./res/current.png", GAMMA)
     except Exception as e:
       print(e)
-      sand.write_to_png(fn.name(), GAMMA)
+      sand.write_to_png("./res/current.png", GAMMA)
       traceback.print_exc(file=sys.stdout)
 
 
