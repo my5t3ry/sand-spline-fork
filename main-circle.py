@@ -37,7 +37,7 @@ def spline_iterator():
   splines = []
   for _ in range(30):
     guide = f(0.5, 0.5)
-    pnum = randint(30, 150)
+    pnum = randint(5, 150)
 
     a = random() * TWOPI + linspace(EDGE, 1.0 - EDGE, pnum)
     # a = linspace(0, TWOPI, pnum)
