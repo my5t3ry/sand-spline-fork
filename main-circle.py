@@ -15,11 +15,11 @@ BG = [0, 0, 0, 1]
 FRONT = [1, 1, 1, 0.01]
 
 TWOPI = 2.0 * pi
-EDGE = 0.08
+EDGE = 0.15
 SIZE = 3000
 PIX = 1.0 / SIZE
 
-INUM = 1000
+INUM = 4000
 
 GAMMA = 2.2
 
