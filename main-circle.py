@@ -74,7 +74,7 @@ def main():
   colors = get_colors('colors/dark_cyan_white_black.gif')
   nc = len(colors)
 
-  fn = Fn(prefix='./res/current.png')
+  fn = Fn(prefix='./res/', postfix='.png')
   si = spline_iterator()
 
   while True:
@@ -85,10 +85,10 @@ def main():
       sand.paint_dots(xy)
       if not itt%(40000):
         print(itt)
-        sand.write_to_png(fn.name(), GAMMA)
+        sand.write_to_png(".res/current.png", GAMMA)
     except Exception as e:
       print(e)
-      sand.write_to_png(fn.name(), GAMMA)
+      sand.write_to_png(".res/current.png", GAMMA)
       traceback.print_exc(file=sys.stdout)
 
 
