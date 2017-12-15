@@ -58,7 +58,7 @@ def spline_iterator():
       s = SandSpline(
           guide,
           path,
-          INUM,
+            INUM,
           scale
           )
       splines.append(s)

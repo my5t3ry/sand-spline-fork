@@ -13,16 +13,16 @@ from numpy import cos
 from numpy import sin
 
 BG = [0,0,0,1]
-FRONT = [1,1,1,0.01]
+FRONT = [1,1,1,0.1]
 
 TWOPI = 2.0*pi
 
-SIZE = 5000
+SIZE = 3000
 PIX = 1.0/SIZE
 
 INUM = 1000
 
-GAMMA = 2.2
+GAMMA = 1.2
 
 STP = 0.00000003
 
@@ -80,7 +80,7 @@ def main():
   while True:
     try:
       itt, w, xy = next(si)
-      rgba = colors[w%nc] + [0.0005]
+      rgba = colors[w%nc] + [0.05]
       sand.set_rgba(rgba)
       sand.paint_dots(xy)
       if not itt%(40000):
