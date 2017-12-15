@@ -85,10 +85,10 @@ def main():
       sand.paint_dots(xy)
       if not itt%(40000):
         print(itt)
-        sand.write_to_png(".res/current.png", GAMMA)
+        sand.write_to_png("./res/current.png", GAMMA)
     except Exception as e:
       print(e)
-      sand.write_to_png(".res/current.png", GAMMA)
+      sand.write_to_png("./res/current.png", GAMMA)
       traceback.print_exc(file=sys.stdout)
 
 
