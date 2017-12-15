@@ -39,9 +39,9 @@ def spline_iterator():
     guide = f(0.5, 0.5)
     pnum = randint(5, 150)
 
-    a = random() * TWOPI + linspace(EDGE, 1.0 - EDGE, pnum)
-    # a = linspace(0, TWOPI, pnum)
-    path = column_stack((cos(a), sin(a))) * (0.35 + (randint(0, 9) * 0.006))
+    # a = random() * TWOPI + linspace(EDGE, 1.0 - EDGE, pnum)
+    a = linspace(0, TWOPI, pnum)
+    path = column_stack((cos(a), sin(a))) * (0.35 + (randint(0, 9) * 0.01))
 
     scale = arange(pnum).astype('float') * STP
 
@@ -80,7 +80,7 @@ def main():
   while True:
     try:
       itt, w, xy = next(si)
-      rgba = colors[w % nc] + [0.003]
+      rgba = colors[w % nc] + [0.006]
       sand.set_rgba(rgba)
       sand.paint_dots(xy)
       if not itt % (40000):
