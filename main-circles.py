@@ -17,19 +17,20 @@ FRONT = [1,1,1,0.01]
 
 TWOPI = 2.0*pi
 
-SIZE = 5000
+SIZE = 3000
 PIX = 1.0/SIZE
 
-GRID_X = 3
-GRID_Y = 3
+GRID_X = 1
+GRID_Y = 1
+GNUM = 5
 
-EDGE = 0.05
-RAD = 1.4
-LEAP_X = (1.0-5*EDGE)/(GRID_X-1)*0.8*0.75
-LEAP_Y = (1.0-5*EDGE)/(GRID_Y-1)*0.8*0.75
+EDGE = 0.5
+RAD = 1
+LEAP_X = 0.4
+LEAP_Y = 0.4
 
 STEPS = 300
-INUM = 2000
+INUM = 3000
 
 GAMMA = 2.2
 
@@ -57,7 +58,7 @@ def spline_iterator():
       s = SandSpline(
           guide,
           path,
-            INUM,
+          INUM,
           scale
           )
       splines.append(s)
