@@ -17,7 +17,7 @@ FRONT = [1,1,1,0.01]
 
 TWOPI = 2.0*pi
 
-SIZE = 10000
+SIZE = 2000
 PIX = 1.0/SIZE
 
 GRID_X = 15
@@ -81,7 +81,7 @@ def main():
   sand.set_bg(BG)
   sand.set_rgba(FRONT)
 
-  colors = get_colors('../colors/dark_cyan_white_black2.gif')
+  colors = get_colors('colors/dark_cyan_white_black.gif')
   nc = len(colors)
 
   fn = Fn(prefix='./res/', postfix='.png')
