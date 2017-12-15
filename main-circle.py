@@ -74,7 +74,7 @@ def main():
   colors = get_colors('colors/dark_cyan_white_black.gif')
   nc = len(colors)
 
-  fn = Fn(prefix='./res/', postfix='.png')
+  fn = Fn(prefix='./res/current.png')
   si = spline_iterator()
 
   while True:
