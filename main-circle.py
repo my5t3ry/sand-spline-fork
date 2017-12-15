@@ -71,7 +71,7 @@ def main():
   sand.set_bg(BG)
   sand.set_rgba(FRONT)
 
-  colors = get_colors('../colors/dark_cyan_white_black.gif')
+  colors = get_colors('colors/dark_cyan_white_black.gif')
   nc = len(colors)
 
   fn = Fn(prefix='./res/', postfix='.png')
