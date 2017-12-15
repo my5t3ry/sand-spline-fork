@@ -41,7 +41,7 @@ def spline_iterator():
 
     a = random() * TWOPI + linspace(EDGE, 1.0 - EDGE, pnum)
     # a = linspace(0, TWOPI, pnum)
-    path = column_stack((cos(a), sin(a))) * (0.35 + (randint(0, 3) * 0.005))
+    path = column_stack((cos(a), sin(a))) * (0.35 + (randint(0, 5) * 0.005))
 
     scale = arange(pnum).astype('float') * STP
 
