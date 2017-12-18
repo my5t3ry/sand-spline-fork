@@ -1,14 +1,10 @@
-description "art-worker"
 
+[Unit]
+Description=Simple WSGI Server
 
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/ubuntu/src/sand-spline-forkmain-circles.py
 
-start on runlevel [2345]
-stop on runlevel [016]
-
-chdir /home/ubuntu/src/sand-spline-fork
-
-# NO expect stanza if your script uses python-daemon
-exec /usr/bin/python3 main-circles.py
-
-# Only turn on respawn after you've debugged getting it to start and stop properly
-respawn
+[Install]
+WantedBy=multi-user.target
