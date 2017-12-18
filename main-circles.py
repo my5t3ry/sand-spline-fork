@@ -96,12 +96,12 @@ def main():
       sand.paint_dots(xy)
       if not itt%(5000):
         if os.path.isfile("./res/dump1.png"):
-          print("printing to dump1:"+str(itt))
-          sand.write_to_png("./res/dump1.png", GAMMA)
+          print("printing to dump2:"+str(itt))
+          sand.write_to_png("./res/dump2.png", GAMMA)
           os.remove("./res/dump1.png")
         else:
-          if os.path.isfile("./res/dump12.png"):
-            print("printing to dump2:"+str(itt))
+          if os.path.isfile("./res/dump2.png"):
+            print("printing to dump1:"+str(itt))
             sand.write_to_png("./res/dump1.png", GAMMA)
             os.remove("./res/dump2.png")
     except Exception as e:
