@@ -100,9 +100,9 @@ def main():
           sand.write_to_png("./res/dump2.png", GAMMA)
           os.remove("./res/dump1.png")
         else:
+          print("printing to dump1:"+str(itt))
+          sand.write_to_png("./res/dump1.png", GAMMA)
           if os.path.isfile("./res/dump2.png"):
-            print("printing to dump1:"+str(itt))
-            sand.write_to_png("./res/dump1.png", GAMMA)
             os.remove("./res/dump2.png")
     except Exception as e:
       print(e)
