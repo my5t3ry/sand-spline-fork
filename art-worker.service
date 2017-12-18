@@ -4,6 +4,7 @@ Description=Simple WSGI Server
 
 [Service]
 Type=simple
+WorkingDirectory=/home/ubuntu/src/sand-spline-fork/
 User=ubuntu
 ExecStart=/usr/bin/python3.5 /home/ubuntu/src/sand-spline-fork/main-circles.py
 
