@@ -4,7 +4,7 @@ Description=Simple WSGI Server
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/python3 /home/ubuntu/src/sand-spline-forkmain-circles.py
+ExecStart=/usr/bin/python3 /home/ubuntu/src/sand-spline-fork/main-circles.py
 
 [Install]
 WantedBy=multi-user.target
