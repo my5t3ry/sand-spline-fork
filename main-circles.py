@@ -94,6 +94,8 @@ def main():
       rgba = colors[w%nc] + [0.005]
       sand.set_rgba(rgba)
       sand.paint_dots(xy)
+      if itt%(200):
+        print("ci:"+str(itt))
       if not itt%(5000):
         if os.path.isfile("./res/dump1.png"):
           print("printing to dump2:"+str(itt))
