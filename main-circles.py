@@ -1,23 +1,24 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
-from numpy import pi
-from numpy import array
-from numpy.random import random
-from numpy.random import randint
+import os
 
-from numpy import linspace
 from numpy import arange
+from numpy import array
 from numpy import column_stack
 from numpy import cos
+from numpy import linspace
+from numpy import pi
 from numpy import sin
+from numpy.random import randint
+from numpy.random import random
 
 BG = [0,0,0,1]
 FRONT = [1,1,1,0.01]
 
 TWOPI = 2.0*pi
 
-SIZE = 3000
+SIZE = 12000
 PIX = 1.0/SIZE
 
 GRID_X = 1
@@ -93,9 +94,15 @@ def main():
       rgba = colors[w%nc] + [0.005]
       sand.set_rgba(rgba)
       sand.paint_dots(xy)
-      if not itt%(700*GRID_Y*GRID_X):
-        print(itt)
-        sand.write_to_png("./res/current.png", GAMMA)
+      if not itt%(2000):
+        if os.path.isfile("./res/dump2.png"):
+          print("printing to dump1:"+str(itt))
+          os.remove("./res/dump2.png")
+          sand.write_to_png("./res/dump1.png", GAMMA)
+        else:
+          print("printing to dump2:"+str(itt))
+          sand.write_to_png("./res/dump2.png", GAMMA)
+          os.remove("./res/dump2.png")
     except Exception as e:
       print(e)
       sand.write_to_png("./res/current.png", GAMMA)
