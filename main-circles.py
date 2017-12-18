@@ -18,7 +18,7 @@ FRONT = [1,1,1,0.01]
 
 TWOPI = 2.0*pi
 
-SIZE = 12000
+SIZE = 8000
 PIX = 1.0/SIZE
 
 GRID_X = 1
